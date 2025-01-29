@@ -22,7 +22,7 @@ mp_drawing_styles = mp.solutions.drawing_styles
 hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
 
 # Load the model
-model_dict = pickle.load(open('./random_forest_baseline.pkl', 'rb'))
+model_dict = pickle.load(open('./xgboost_baseline.pkl', 'rb'))
 model = model_dict['model']
 
 # Open the camera
