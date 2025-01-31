@@ -4,25 +4,25 @@
 
 First we download the data from 'grassknoted/asl-alphabet' from kaggle.
 The data is organized into train and test folders. The train folder contains
-subfolder for each letter of the alphabet and some special characters. Next we
+subfolder for each letter of the alphabet and some special characters. Next, we
 move the data to the current working directory for preprocessing. Using opencv,
 we can read and display the data. We use the mediapipe hands model to extract the
 'landmarks' from the data. Each 'landmark' is represented by (x, y, z) coordinates.
 We can build a dataset using these points and save it using pickle. Before we do
 this we can define a mapping between the characters and numberical labels. The
-numerical labels are arbitray but are just easier to work with. For each data point,
-we append the x and y coordinations and the label mapped to a numerical represenation.
+numerical labels are arbitrary, but are just easier to work with. For each data point,
+we append the x and y coordinates and the label mapped to its respective numerical represenation.
 Lastly, we ensure that the data is correct by comparing the shape of X (the data),
-and y (the labels). THe next step is the train the model. First, we load the data
+and y (the labels). The next step is the train the model. First, we load the data
 that we saved as a pickle file and split the data into train and test sets. Since the
 test set of the original data only contained 1 example for each class, we will split
 the dataset that we generated into an 80/20 split. It is important to specify shuffle
-to True and to stratify on th labels to reduce any potential bias. After testing using
+to True and to stratify on the labels to reduce any potential bias. After testing using
 a RandomForestClassifier, XGBoost Classifer and a MLP, the RandomForestClassifier
 yielded the best perfomance of 99.01% accuracy. To visualize this data use opencv to
-capture video from the user webcam. We then extract 'landmarks' from the camera in
-the same way and pass it to our trained models. The model outputs the prediction
-which we can display on the webcam feed along with a bounding box definece by the min
+capture video from the user webcam. We extract 'landmarks' from the camera in
+the same way we did when creating our dataset and pass it to our trained model. The model outputs the prediction
+which we can display on the webcam feed along with a bounding box defined by the min
 and max of the all the landmarks.
 
 ### Python Version
