@@ -9,7 +9,7 @@ move the data to the current working directory for preprocessing. Using opencv,
 we can read and display the data. We use the mediapipe hands model to extract the
 'landmarks' from the data. Each 'landmark' is represented by (x, y, z) coordinates.
 We can build a dataset using these points and save it using pickle. Before we do
-this we can define a mapping between the characters and numberical labels. The
+this we can define a mapping between the characters and numerical labels. The
 numerical labels are arbitrary, but are just easier to work with. For each data point,
 we append the x and y coordinates and the label mapped to its respective numerical represenation.
 Lastly, we ensure that the data is correct by comparing the shape of X (the data),
